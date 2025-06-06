@@ -1,0 +1,254 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff8dc;
+  font-family: sans-serif;
+}
+html, body {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.titulo-principal {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 32px;
+    color: #333;
+}
+
+
+.container {
+  position:relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 4rem auto 0 auto;
+  padding: 2rem;
+}
+
+
+.content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+
+.maxwell {
+  width: 250px;
+  position: relative;
+  margin: 2rem 0;
+}
+
+.balao-manual {
+  position: relative;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  width: 90%;
+  min-height: 300px;
+  font-size: 1rem;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  z-index: 20;
+}
+
+.balao-triangulo {
+  position: absolute;
+  left: 100%;
+  top: 30%;
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+.entrada-cargas {
+  display: flex;
+  flex-direction: column;  /* empilha o texto e os inputs */
+  gap: 15px;                /* espaço entre texto e inputs */
+  margin: 20px;
+  align-items: center;
+  z-index: 20;
+ 
+}
+
+/* texto normal, só ocupa largura total */
+.texto-entrada {
+  width: 46%;
+  font-weight: bold;
+  color: #333;
+}
+
+/* essa é a linha que posiciona os inputs lado a lado */
+.inputs-wrapper {
+  display: flex;
+  flex-wrap: wrap;     /* permite quebrar se a tela for estreita */
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+   z-index: 20;
+}
+
+
+.entrada-cargas label {
+  font-weight: bold;
+  color: #333;
+}
+
+.entrada-cargas input[type="number"] {
+  padding: 8px 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fffdf5;
+  box-shadow: inset 2px 2px 5px rgba(0,0,0,0.05);
+  transition: all 0.2s ease-in-out;
+}
+
+.entrada-cargas input[type="number"]:focus {
+  outline: none;
+  border-color: #e0b84a;
+  box-shadow: 0 0 5px #f5c86a;
+}
+
+#atualizarSimulacao {
+  padding: 10px 16px;
+  font-size: 1rem;
+  background: linear-gradient(145deg, #ffe6a1, #ffd580);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.15), -1px -1px 3px rgba(255,255,255,0.6);
+  transition: all 0.2s ease-in-out;
+}
+
+#atualizarSimulacao:hover {
+  background: linear-gradient(145deg, #ffd580, #ffcc66);
+  transform: scale(1.03);
+}
+
+#atualizarSimulacao:active {
+  transform: scale(0.97);
+  box-shadow: inset 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+/* GIF de simulação */
+#simulacaoGIF {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  z-index: 9;
+  position: relative;
+}
+
+/* Container pai horizontal */
+.layout-horizontal {
+  display: flex;
+  width: 100%;
+  height: 70vh;
+}
+
+.lado-esquerdo {
+  width: 50%; /* ajuste conforme necessário */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin-top: 2%;
+  box-sizing: border-box;
+}
+
+.lado-direito {
+  width: 50%; /* ajuste conforme necessário */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+  box-sizing: border-box;
+}
+
+
+
+/***********BOTÕES*******/
+.botoes-slider button {
+  
+  padding: 10px 16px;
+  font-size: 1.5rem;
+  background: linear-gradient(145deg, #ffe6a1, #ffd580);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 3px 3px 6px rgba(0,0,0,0.2), -2px -2px 4px rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.botoes-slider button:hover {
+  background: linear-gradient(145deg, #ffd580, #ffcc66);
+  transform: scale(1.05);
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.25), -2px -2px 5px rgba(255,255,255,0.6);
+}
+
+.botoes-slider button:active {
+  transform: scale(0.98);
+  box-shadow: inset 2px 2px 4px rgba(0,0,0,0.2);
+}
+.botoes-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+
+
+.botoes-audio {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* Novo botão único de áudio (toggle) */
+.btnToggleAudio {
+  padding: 10px 16px;
+  font-size: 1.5rem;
+  background: linear-gradient(145deg, #ffe6a1, #ffd580);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 3px 3px 6px rgba(0,0,0,0.2), -2px -2px 4px rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  z-index: 20;
+}
+
+.btnToggleAudio:hover {
+  background: linear-gradient(145deg, #ffd580, #ffcc66);
+  transform: scale(1.05);
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.25), -2px -2px 5px rgba(255,255,255,0.6);
+}
+
+.btnToggleAudio:active {
+  transform: scale(0.98);
+  box-shadow: inset 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+
+.nav-btn {
+  background-color: #fff8dc;
+  border: 1px solid #999;
+  font-size: 1.5rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.nav-btn:hover {
+  background-color: #f0e6c0;
+}
+
+
